@@ -1,0 +1,69 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: #1E2D3B;
+    min-height: 100vh;
+}
+
+.container {
+    width: 1070px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+header {
+    width: 100%;
+    height: 70px;
+    background: rgb(46, 58, 70);
+}
+
+header img {
+    height: 50px;
+    margin-top: 10px;
+}
+
+.films-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 100px 0;
+}
+
+.cover {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    flex-basis: 200px;
+    padding: 20px;
+    margin: 10px 20px;
+    height: 400px;
+    background: rgb(46, 58, 70);
+    text-align: center;
+}
+
+.cover img {
+    max-width: 100%;
+}
+
+.cover h3 {
+    margin: 20px 0;
+    color: white;
+    font-size: 22px;
+    text-transform: uppercase;
+}
+
+.cover span.author {
+    color: grey;
+    font-size: 20px;
+}
+
+.cover span.year {
+    color: grey;
+}

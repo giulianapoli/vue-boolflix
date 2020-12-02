@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>vue-boolflix</title>
+        <!-- Ajax CND axios -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
+
+        <!-- VUE (CDN) -->
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+      <div id="root">
+
+
+        <header>
+            <div class="container">
+                <img src="logo.png" alt="logo" />
+
+                  <input type="text" name="ricerca"
+                  v-model="ricercaTitolo">
+
+                  <button type="button" name="button"
+                  @click="ricercaFilm"
+                  >
+                    Cerca
+                  </button>
+            </div>
+
+
+        </header>
+
+        <div class="films-container container">
+            <!-- Cover Film ad esempio -->
+            <div class="cover"
+            v-for="film in insiemeFilms"
+            >
+                <img :src="basePath+film.poster_path"
+                alt="">
+                <h3>{{film.title}}</h3>
+                <span class="author">{{film.popularity}}</span>
+                <span class="year">{{film.release_date}}</span>
+            </div>
+        </div>
+
+      </div>
+
+      <script src="js/main.js" charset="utf-8"></script>
+    </body>
+</html>
