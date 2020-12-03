@@ -8,7 +8,12 @@
 
         <!-- VUE (CDN) -->
         <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+        <!-- style -->
         <link rel="stylesheet" href="css/style.css">
+
+        <!-- fontawesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
     </head>
     <body>
       <div id="root">
@@ -16,16 +21,13 @@
 
         <header>
             <div class="container">
-                <img src="logo.png" alt="logo" />
+                <img :src="basePath+logoNetflixPath" alt="logo" />
 
                   <input type="text" name="ricerca"
-                  v-model="ricercaTitolo">
-
-                  <button type="button" name="button"
-                  @click="ricercaFilm"
+                  v-model="ricercaTitolo"
+                  @keyup.enter="ricercaFilm"
                   >
-                    Cerca
-                  </button>
+
             </div>
 
 
@@ -33,14 +35,28 @@
 
         <div class="films-container container">
             <!-- Cover Film ad esempio -->
-            <div class="cover"
+            <div class="card"
             v-for="film in insiemeFilms"
             >
                 <img :src="basePath+film.poster_path"
                 alt="">
+
                 <h3>{{film.title}}</h3>
-                <span class="author">{{film.popularity}}</span>
+
+                <ul class="author">
+
+                  <li
+                  v-for="voto in votazioneFilm(film.vote_average)"
+                  >
+                  <i class="fas fa-star"></i>
+                  </li>
+
+                </ul>
                 <span class="year">{{film.release_date}}</span>
+
+                <img
+                v-for="bandiera in bandiere"
+                :src="img + bandiere.flagImage" alt="">
             </div>
         </div>
 

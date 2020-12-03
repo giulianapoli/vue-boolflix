@@ -6,7 +6,7 @@
 }
 
 body {
-    background: #1E2D3B;
+    background: #141414;
     min-height: 100vh;
 }
 
@@ -19,7 +19,7 @@ body {
 header {
     width: 100%;
     height: 70px;
-    background: rgb(46, 58, 70);
+    background: #141414;
 }
 
 header img {
@@ -35,7 +35,7 @@ header img {
     padding: 100px 0;
 }
 
-.cover {
+.card {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -48,22 +48,31 @@ header img {
     text-align: center;
 }
 
-.cover img {
+.card img {
     max-width: 100%;
 }
 
-.cover h3 {
+.card h3 {
     margin: 20px 0;
     color: white;
-    font-size: 22px;
+    font-size: 15px;
     text-transform: uppercase;
 }
 
-.cover span.author {
+.card ul.author {
     color: grey;
     font-size: 20px;
+    list-style: none;
 }
 
-.cover span.year {
+.card .author li {
+  display: inline-block;
+}
+
+.card .author li > i {
+  color: yellow;
+}
+
+.card span.year {
     color: grey;
 }
