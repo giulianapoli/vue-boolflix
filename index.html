@@ -43,6 +43,11 @@
 
                 <h3>{{film.title}}</h3>
 
+                <span>
+                  <img
+                  :src="'img/' + film.original_language + '.png'" alt="">
+                </span>
+
                 <ul class="author">
 
                   <li
@@ -53,10 +58,6 @@
 
                 </ul>
                 <span class="year">{{film.release_date}}</span>
-
-                <img
-                v-for="bandiera in bandiere"
-                :src="img + bandiere.flagImage" alt="">
             </div>
         </div>
 

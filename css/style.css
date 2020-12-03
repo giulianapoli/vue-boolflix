@@ -59,6 +59,10 @@ header img {
     text-transform: uppercase;
 }
 
+.card > span {
+  width: 30px;
+}
+
 .card ul.author {
     color: grey;
     font-size: 20px;
