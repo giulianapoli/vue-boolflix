@@ -25,8 +25,8 @@
 
                   <input type="text" name="ricerca"
                   v-model="ricercaTitolo"
-                  @keyup.enter="ricercaFilm"
-                  @keyup.enter="ricercaSerie"
+                  @keyup.enter="ricercaFilm(); ricercaSerie();"
+                  
                   >
 
             </div>

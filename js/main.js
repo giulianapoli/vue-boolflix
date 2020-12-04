@@ -37,6 +37,7 @@ const rootApp = new Vue ({
     },
 
     ricercaSerie() {
+      console.log('rasd');
       axios.get("https://api.themoviedb.org/3/search/tv",
       {
         params: {
