@@ -26,6 +26,7 @@
                   <input type="text" name="ricerca"
                   v-model="ricercaTitolo"
                   @keyup.enter="ricercaFilm"
+                  @keyup.enter="ricercaSerie"
                   >
 
             </div>
@@ -36,7 +37,8 @@
         <div class="films-container container">
             <!-- Cover Film ad esempio -->
             <div class="card"
-            v-for="film in insiemeFilms"
+            v-for="film in insiemeFilm"
+            @mouseover="hover = true"
             >
                 <img :src="basePath+film.poster_path"
                 alt="">
@@ -45,7 +47,7 @@
 
                 <span>
                   <img
-                  :src="'img/' + film.original_language + '.png'" alt="">
+                  :src="'img/' + film.original_language + '.png'" :alt="film.original_language">
                 </span>
 
                 <ul class="author">
@@ -58,6 +60,32 @@
 
                 </ul>
                 <span class="year">{{film.release_date}}</span>
+            </div>
+
+            <div class="card"
+            v-for="film in insiemeSerie"
+            @mouseover="hover = true"
+            >
+                <img :src="basePath+film.poster_path"
+                alt="">
+
+                <h3>{{film.name}}</h3>
+
+                <span>
+                  <img
+                  :src="'img/' + film.original_language + '.png'" :alt="film.original_language">
+                </span>
+
+                <ul class="author">
+
+                  <li
+                  v-for="voto in votazioneFilm(film.vote_average)"
+                  >
+                  <i class="fas fa-star"></i>
+                  </li>
+
+                </ul>
+                <span class="year">{{film.first_air_date}}</span>
             </div>
         </div>
 

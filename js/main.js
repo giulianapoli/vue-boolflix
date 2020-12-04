@@ -15,12 +15,15 @@ https://api.themoviedb.org/3/search/tv?api_key=e99307154c6dfb0b4750f6603256716d&
 const rootApp = new Vue ({
   el:"#root",
   data: {
-    insiemeFilms: [],
+    insiemeFilm: [],
+    insiemeSerie: [],
     api_key: '8cc3b039b9855e85a8632357051a68d3',
     ricercaTitolo: '',
     basePath: 'https://image.tmdb.org/t/p/w500/',
-    logoNetflixPath: 'wwemzKWzjKYJFfCeiB57q3r4Bcm.svg'
+    logoNetflixPath: 'wwemzKWzjKYJFfCeiB57q3r4Bcm.svg',
+    hover: false
   },
+
 
   methods: {
     ricercaFilm() {
@@ -30,7 +33,18 @@ const rootApp = new Vue ({
           query:this.ricercaTitolo
         }
       })
-      .then(response => this.insiemeFilms = response.data.results);
+      .then(response => this.insiemeFilm = response.data.results);
+    },
+
+    ricercaSerie() {
+      axios.get("https://api.themoviedb.org/3/search/tv",
+      {
+        params: {
+          'api_key': this.api_key,
+          query:this.ricercaTitolo
+        }
+      })
+      .then(response => this.insiemeSerie = response.data.results);
     },
 
     votazioneFilm(voto) {

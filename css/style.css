@@ -3,11 +3,13 @@
     padding: 0;
     font-family: 'Lato', sans-serif;
     box-sizing: border-box;
+
 }
 
 body {
     background: #141414;
     min-height: 100vh;
+    overflow: scroll;
 }
 
 .container {
@@ -46,6 +48,11 @@ header img {
     height: 400px;
     background: rgb(46, 58, 70);
     text-align: center;
+}
+
+.card:hover {
+  opacity: 0.5;
+  transition: 0.5s;
 }
 
 .card img {
