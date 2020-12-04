@@ -24,6 +24,16 @@ const rootApp = new Vue ({
     hover: false
   },
 
+  mounted() {
+    axios.get("https://api.themoviedb.org/3/movie/popular",
+    {
+      params: {
+        'api_key': this.api_key
+      }
+    })
+    .then(response => this.insiemeFilm = response.data.results);
+  },
+
 
   methods: {
     ricercaFilm() {
@@ -37,7 +47,6 @@ const rootApp = new Vue ({
     },
 
     ricercaSerie() {
-      console.log('rasd');
       axios.get("https://api.themoviedb.org/3/search/tv",
       {
         params: {
