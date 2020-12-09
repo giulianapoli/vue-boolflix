@@ -21,14 +21,17 @@ const rootApp = new Vue ({
     ricercaTitolo: '',
     basePath: 'https://image.tmdb.org/t/p/w500/',
     logoNetflixPath: 'wwemzKWzjKYJFfCeiB57q3r4Bcm.svg',
-    hover: false
+    hover: false,
+    page: 1,
+    searchInput: false,
   },
 
   mounted() {
     axios.get("https://api.themoviedb.org/3/movie/popular",
     {
       params: {
-        'api_key': this.api_key
+        'api_key': this.api_key,
+        page: this.page
       }
     })
     .then(response => this.insiemeFilm = response.data.results);
@@ -40,7 +43,8 @@ const rootApp = new Vue ({
       axios.get("https://api.themoviedb.org/3/search/movie", {
         params: {
           'api_key': this.api_key,
-          query:this.ricercaTitolo
+          query:this.ricercaTitolo,
+          page: this.page
         }
       })
       .then(response => this.insiemeFilm = response.data.results);
@@ -51,7 +55,8 @@ const rootApp = new Vue ({
       {
         params: {
           'api_key': this.api_key,
-          query:this.ricercaTitolo
+          query:this.ricercaTitolo,
+          page: this.page
         }
       })
       .then(response => this.insiemeSerie = response.data.results);
@@ -59,6 +64,13 @@ const rootApp = new Vue ({
 
     votazioneFilm(voto) {
       return Math.ceil(voto / 2);
+    },
+
+    cambioPagina() {
+      this.page++;
+
+      this.ricercaFilm();
+      this.ricercaSerie();
     }
   }
 
