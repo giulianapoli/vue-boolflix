@@ -30,11 +30,21 @@
 
                 <img :src="basePath+logoNetflixPath" alt="logo" />
 
-                <span> <a href="#">Home</a> </span>
-                <span> <a href="#">Serie TV</a> </span>
-                <span> <a href="#">Film</a> </span>
-                <span> <a href="#">Nuovi e popolari</a> </span>
-                <span> <a href="#">La mia lista</a> </span>
+                <!-- Funzionalità pagina iniziale -->
+                <ul class="directory">
+                  <li> <a href="#">Home</a> </li>
+                  <li> <a href="#">Serie TV</a> </li>
+                  <li> <a href="#">Film</a> </li>
+                  <li> <a href="#">Nuovi e popolari</a> </li>
+                  <li> <a href="#">La mia lista</a> </li>
+                </ul>
+
+                <!-- dropdown media query: da ipad in giù -->
+                <div class="dropdown d-flex">
+                  <span>Sfoglia
+                    <i class="fas fa-sort-down"></i>
+                  </span>
+                </div>
 
               </div>
 

@@ -45,7 +45,12 @@ header {
     justify-content: flex-start;
 }
 
-.header_container .sx_header span > a {
+.directory li {
+  display: inline-block;
+  list-style: none;
+}
+
+.directory li > a {
   margin-left: 20px;
   font-size: 14px;
   text-decoration: none;
@@ -94,7 +99,7 @@ header {
     align-items: center;
     flex-direction: column;
     flex-basis: 200px;
-    margin: 10px 20px;
+    margin-top: 40px ;
     height: 350px;
     background: rgb(46, 58, 70);
     text-align: center;
@@ -156,4 +161,21 @@ header {
   display: block;
   text-align: center;
   margin-bottom: 100px;
+}
+
+/* MEDIA QUERIES */
+@media screen and (min-width: 1026px) {
+  .dropdown {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1025px){
+  .directory {
+    display: none;
+  }
+
+  .dropdown {
+    margin-left: 20px;
+  }
 }
